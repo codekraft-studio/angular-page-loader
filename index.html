@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AngularJs Loader - codekraft studio</title>
+    <meta name="author" content="codekraft-studio">
+    <meta name="description" content="Expect us, we are coming, the new full qualified web developers duo.">
+  	<meta name="Robots" content="ALL,INDEX">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta property="og:title" content="CodeKraft, cutting edge programming!" />
+  	<meta property="og:description" content="Expect us, we are coming, the new full qualified web developers duo" />
+  	<meta property="og:image" content="http://core.codekraft.it/www.codekraft.it/quadkode.jpg" />
+  	<meta property="og:type" content="website" />
+  	<meta property="og:url" content="http://www.codekraft.it/" />
+  	<meta property="og:site_name" content="CodeKraft, cutting edge programming!" />
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="src/angular-loader.css" media="screen" title="no title" charset="utf-8">
+    <style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+    </style>
+  </head>
+  <body ng-cloak>
+
+    <preloader bg-color="#fff" flag="isLoading"></preloader>
+
+    <article ng-controller="MainCtrl" role="main">
+
+      <header>
+        <div class="hcont">
+          <h1>angular-preloader</h1>
+          <h2>quick integration for your favourite loaders</h2>
+        </div>
+        <a href="https://github.com/codekraft-studio"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+      </header>
+
+      <section>
+
+        <div class="hcont">
+
+          <h4>Very simple to use and very effective!</h4>
+
+          <p>
+            This page is the basic usage, a normal AngularJs application without routes.
+            With this module you can use your favourite loader in a second with a complete integration for your app.
+            <br>In this <a href="/demos/angular-loader/example/#/">other page</a> instead you can see the example that uses the routing system.
+            <br>The directive will show the loader during the routes view load only if the route takes more than <b>250ms</b> to load.
+            <br>This time is customizable with the <b>latency</b> attribute.
+          </p>
+
+
+        </div>
+
+      </section>
+
+    </article>
+
+  </body>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular-route.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular-animate.min.js"></script>
+  <script type="text/javascript" src="dist/angular-loader.min.js"></script>
+  <script>
+    angular.module('app', [
+      'ngRoute',
+      'ngAnimate',
+      'angular-loader'
+    ]);
+
+    angular.module('app')
+
+    .run(function($timeout, $rootScope) {
+
+      $timeout(function() {
+        $rootScope.isLoading = false;
+      }, 3000);
+
+    })
+
+    .controller('MainCtrl', function($scope, $rootScope, $route, $timeout) {
+
+      $scope.routesList = [];
+
+      angular.forEach($route.routes, function(route, ind) {
+
+        if( route.title ) {
+          $scope.routesList.push(route);
+        }
+
+      })
+
+    })
+
+    angular.element(document).ready(function() {
+      // bootstrap application
+      angular.bootstrap(document, ['app'])
+    })
+
+  </script>
+</html>
