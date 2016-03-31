@@ -24,7 +24,7 @@ angular.module('app', ['angular-page-loader'])
 And optionally add the module directive to your page DOM, inside the body:
 ```html
 <body ng-cloak>
-  <preloader></preloader>
+  <page-loader></page-loader>
 </body>
 ```
 
@@ -41,7 +41,7 @@ To hide all the Angular elements that have **ng-cloack** attribute until the app
 ### Basic usage
 
 ##### with ngRoute:
-If you **are using** Angular Routes (ngRoute), add the **preloader** directive and you are ready to go, simply reload your application and you will see the loader on pages that takes more than **250ms** to load.
+If you **are using** Angular Routes (ngRoute), add the **page-loader** directive and you are ready to go, simply reload your application and you will see the loader on pages that takes more than **250ms** to load.
 
 
 ##### without ngRoute:
@@ -49,7 +49,7 @@ If you **are NOT using** Angular Routes (ngRoute) you must add a **flag** attrib
 
 ```html
 <body ng-cloak>
-  <preloader flag="isLoading"></preloader>
+  <page-loader flag="isLoading"></page-loader>
 </body>
 ```
 
@@ -76,28 +76,28 @@ You can use any loader you prefer in the module simply by adding it inside the d
 **Note:** the loader used in this example is made by [_massimo](http://codepen.io/_massimo/) on codepen and it was taken from [here](http://codepen.io/_massimo/pen/JXELvz).
 
 ```html
-<preloader>
+<page-loader>
   <div class="pacman"></div>
   <div class="dot"></div>
-</preloader>
+</page-loader>
 ```
 
 **Obviously** you need to add the related loader CSS style too.
 
 
-###### How to change the preloader background?
-If you want to specify a custom background color for the preloader, add the attribute **bg-color** and pass to it a HEX,RGB or RGBA color code or just a normal color string, like you will do in css.
+###### How to change the page-loader background?
+If you want to specify a custom background color for the page-loader, add the attribute **bg-color** and pass to it a HEX,RGB or RGBA color code or just a normal color string, like you will do in css.
 ```html
 <!-- some examples -->
-<preloader bg-color="whitesmoke"></preloader>
-<preloader bg-color="#7986CB"></preloader>
-<preloader bg-color="rgb(160, 25, 120)"></preloader>
-<preloader bg-color="rgba(120, 20, 20, 0.8)"></preloader>
+<page-loader bg-color="whitesmoke"></page-loader>
+<page-loader bg-color="#7986CB"></page-loader>
+<page-loader bg-color="rgb(160, 25, 120)"></page-loader>
+<page-loader bg-color="rgba(120, 20, 20, 0.8)"></page-loader>
 ```
 
 
-###### How to change the preloader latency time?
+###### How to change the page-loader latency time?
 You can also customize the loader latency using the **latency** attribute, the value is expressed in milliseconds.
 ```html
-<preloader latency="500"></preloader>
+<page-loader latency="500"></page-loader>
 ```
