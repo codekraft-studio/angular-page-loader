@@ -12,8 +12,8 @@ npm install angular-page-loader
 
 Or use it directly from the GitHub CDN:
 ```html
-<link rel="stylesheet" href="angular-page-loader.css">
-<script type="text/javascript" src="angular-page-loader.min.js"></script>
+<link rel="stylesheet" href="https://cdn.rawgit.com/codekraft-studio/angular-page-loader/master/dist/angular-page-loader.css">
+<script type="text/javascript" src="https://cdn.rawgit.com/codekraft-studio/angular-page-loader/master/dist/angular-page-loader.min.js"></script>
 ```
 
 Add the module name to your application dependencies:
