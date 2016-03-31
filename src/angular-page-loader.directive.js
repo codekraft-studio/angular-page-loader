@@ -1,9 +1,9 @@
-angular.module('angular-loader')
-.directive('preloader', preloader)
+angular.module('angular-page-loader', [])
+.directive('pageLoader', pageLoader)
 
-preloader.$inject = ['$timeout', '$templateCache', '$route']
+pageLoader.$inject = ['$timeout', '$templateCache', '$injector']
 
-function preloader($timeout, $templateCache, $route) {
+function pageLoader($timeout, $templateCache, $injector) {
 
   var directive = {
     restrict: 'EA',
@@ -59,21 +59,31 @@ function preloader($timeout, $templateCache, $route) {
       inner.append( loader );
     }
 
-    scope.$on('$routeChangeStart', function() {
-      promise = $timeout(function() {
-        elem.removeClass('ng-hide');
-      }, latency);
-    });
+    // try if route module is defined
+    // and bind the routechange events callbacks
+    try {
 
-    scope.$on('$routeChangeSuccess', function() {
-      $timeout.cancel(promise);
-      elem.addClass('ng-hide');
-    });
+      window.angular.module('ngRoute');
 
-    scope.$on('$routeChangeError', function() {
-      $timeout.cancel(promise);
-      elem.addClass('ng-hide');
-    });
+      scope.$on('$routeChangeStart', function() {
+        promise = $timeout(function() {
+          elem.removeClass('ng-hide');
+        }, latency);
+      });
+
+      scope.$on('$routeChangeSuccess', function() {
+        $timeout.cancel(promise);
+        elem.addClass('ng-hide');
+      });
+
+      scope.$on('$routeChangeError', function() {
+        $timeout.cancel(promise);
+        elem.addClass('ng-hide');
+      });
+
+    } catch(e) {
+      return false;
+    }
 
   }
 

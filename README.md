@@ -1,24 +1,24 @@
-# angular-loader
+# angular-page-loader
 quick app integration for your favourite loaders
 
-### [DEMO](http://www.codekraft.it/demos/angular-loader/)
+### [DEMO](http://www.codekraft.it/demos/angular-page-loader/)
 
 ### Getting started
 Download it via github or via npm:
 
 ```bash
-npm install angular-loader
+npm install angular-page-loader
 ```
 
 Or use it directly from the GitHub CDN:
 ```html
-<link rel="stylesheet" href="angular-loader.css">
-<script type="text/javascript" src="angular-loader.min.js"></script>
+<link rel="stylesheet" href="angular-page-loader.css">
+<script type="text/javascript" src="angular-page-loader.min.js"></script>
 ```
 
 Add the module name to your application dependencies:
 ```javascript
-angular.module('app', ['angular-loader'])
+angular.module('app', ['angular-page-loader'])
 ```
 
 And optionally add the module directive to your page DOM, inside the body:

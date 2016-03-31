@@ -1,5 +1,5 @@
 {
-  "name": "angular-loader",
+  "name": "angular-page-loader",
   "version": "1.0.0",
   "description": "quick app integration for your favourite loaders",
   "main": "index.js",
