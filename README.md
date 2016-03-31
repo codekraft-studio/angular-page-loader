@@ -40,11 +40,11 @@ To hide all the Angular elements that have **ng-cloack** attribute until the app
 
 ### Basic usage
 
-##### with ngRoute:
+###### with ngRoute:
 If you **are using** Angular Routes (ngRoute), add the **page-loader** directive and you are ready to go, simply reload your application and you will see the loader on pages that takes more than **250ms** to load.
 
 
-##### without ngRoute:
+###### without ngRoute:
 If you **are NOT using** Angular Routes (ngRoute) you must add a **flag** attribute to the element in order to be able to determine when you want to hide the loader, like seen in this example:
 
 ```html
@@ -71,7 +71,7 @@ If you have some doubt check the example or the index page inside the repository
 
 ### Examples
 
-###### How to use a custom loader?
+##### How to use a custom loader?
 You can use any loader you prefer in the module simply by adding it inside the directive element, like in this example:
 **Note:** the loader used in this example is made by [_massimo](http://codepen.io/_massimo/) on codepen and it was taken from [here](http://codepen.io/_massimo/pen/JXELvz).
 
@@ -85,7 +85,7 @@ You can use any loader you prefer in the module simply by adding it inside the d
 **Obviously** you need to add the related loader CSS style too.
 
 
-###### How to change the page-loader background?
+##### How to change the page-loader background?
 If you want to specify a custom background color for the page-loader, add the attribute **bg-color** and pass to it a HEX,RGB or RGBA color code or just a normal color string, like you will do in css.
 ```html
 <!-- some examples -->
@@ -96,7 +96,7 @@ If you want to specify a custom background color for the page-loader, add the at
 ```
 
 
-###### How to change the page-loader latency time?
+##### How to change the page-loader latency time?
 You can also customize the loader latency using the **latency** attribute, the value is expressed in milliseconds.
 ```html
 <page-loader latency="500"></page-loader>
