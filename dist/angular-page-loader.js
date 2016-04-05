@@ -1,4 +1,4 @@
-/* angular-page-loader - v1.0.0 by codekraft-studio - 2016-03-31 */
+/* angular-page-loader - v1.0.0 by codekraft-studio - 2016-04-05 */
 
 angular.module('angular-page-loader', [])
 
@@ -70,6 +70,8 @@ function pageLoader($timeout, $templateCache, $injector) {
       window.angular.module('ngRoute');
 
       scope.$on('$routeChangeStart', function() {
+        // cancel any previous promise
+        $timeout.cancel(promise);
         promise = $timeout(function() {
           elem.removeClass('ng-hide');
         }, latency);

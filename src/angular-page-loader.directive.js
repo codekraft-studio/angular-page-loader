@@ -66,6 +66,8 @@ function pageLoader($timeout, $templateCache, $injector) {
       window.angular.module('ngRoute');
 
       scope.$on('$routeChangeStart', function() {
+        // cancel any previous promise
+        $timeout.cancel(promise);
         promise = $timeout(function() {
           elem.removeClass('ng-hide');
         }, latency);
