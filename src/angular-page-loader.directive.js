@@ -10,7 +10,7 @@ function pageLoader($timeout, $templateCache, $injector) {
     replace: false,
     scope: { isLoading: '=?flag' },
     transclude: true,
-    template: '<div ng-transclude></div>',
+    template: '<div class="loader-container" ng-transclude></div>',
     link: _link
   }
 
@@ -27,22 +27,11 @@ function pageLoader($timeout, $templateCache, $injector) {
     var rgbReg = /rgb\((\d{1,3}), (\d{1,3}), (\d{1,3})\)/;
     var rgbaReg = /rgba\((\d{1,3}), (\d{1,3}), (\d{1,3}), (\d+(\.\d+))\)/;
 
-    // the background color
-    var color = ( hexReg.test(attr.bgColor) || rgbReg.test(attr.bgColor) || rgbaReg.test(attr.bgColor) ) ? attr.bgColor : 'white';
+    // get/set the background color
+    var color = ( hexReg.test(attr.bgColor) || rgbReg.test(attr.bgColor) || rgbaReg.test(attr.bgColor) )
+      ? attr.bgColor : angular.isString(attr.bgColor) ? attr.bgColor : 'white';
 
-    scope.isLoading = true; // init flag variable to true
-
-    // if a flag is specified
-    // use this as loading status
-    if( attr.flag ) {
-
-      scope.$watch('isLoading', function(n) {
-        return n ? elem.removeClass('ng-hide') : elem.addClass('ng-hide');
-      })
-
-    }
-
-    // set element fullscreen
+    // set element style
     elem.css({
       'position': 'absolute',
       'width': '100%',
@@ -57,6 +46,18 @@ function pageLoader($timeout, $templateCache, $injector) {
       var loader = document.createElement('div');
       loader.className = attr.loaderClass || 'loader';
       inner.append( loader );
+    }
+
+    scope.isLoading = true; // init flag variable to true
+
+    // if a flag is specified
+    // use this as loading status
+    if( attr.flag ) {
+
+      scope.$watch('isLoading', function(n) {
+        return n ? elem.removeClass('ng-hide') : elem.addClass('ng-hide');
+      })
+
     }
 
     // try if route module is defined
