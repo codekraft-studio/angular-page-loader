@@ -3,7 +3,7 @@ angular.module('angular-page-loader', [])
 
 pageLoader.$inject = ['$timeout', '$templateCache', '$injector']
 
-function pageLoader($timeout, $templateCache, $injector) {
+function pageLoader($timeout, $templateCache, $injector, $location) {
 
   var directive = {
     restrict: 'EA',
@@ -23,6 +23,7 @@ function pageLoader($timeout, $templateCache, $injector) {
     // the time to wait before show the loader
     var latency = attr.latency || 250;
 
+    // the background-color regexps
     var hexReg = /^#[0-9A-F]{6}$/i;
     var rgbReg = /rgb\((\d{1,3}), (\d{1,3}), (\d{1,3})\)/;
     var rgbaReg = /rgba\((\d{1,3}), (\d{1,3}), (\d{1,3}), (\d+(\.\d+))\)/;
@@ -66,13 +67,18 @@ function pageLoader($timeout, $templateCache, $injector) {
 
       window.angular.module('ngRoute');
 
-      scope.$on('$routeChangeStart', function() {
+      scope.$on('$locationChangeStart', function(e) {
         // cancel any previous promise
         $timeout.cancel(promise);
-        promise = $timeout(function() {
-          elem.removeClass('ng-hide');
-        }, latency);
-      });
+        // check if location change has been prevented
+        scope.$evalAsync(function() {
+          if( !e.defaultPrevented ) {
+            promise = $timeout(function() {
+              elem.removeClass('ng-hide');
+            }, latency);
+          }
+        })
+      })
 
       scope.$on('$routeChangeSuccess', function() {
         $timeout.cancel(promise);
