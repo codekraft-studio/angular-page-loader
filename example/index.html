@@ -95,9 +95,10 @@
         })
 
         // contacts route
-        .when('/contacts', {
-          title: 'Contacts',
-          templateUrl: 'partials/contacts.html',
+        .when('/details', {
+          title: 'Details',
+          controller: 'DetailsCtrl',
+          templateUrl: 'partials/details.html',
           resolve: {
             timing: function($timeout, $q) {
               var defer = $q.defer();
@@ -111,7 +112,7 @@
 
     })
 
-    .controller('MainCtrl', function($scope, $route) {
+    .controller('MainCtrl', function($scope, $route, $location) {
 
       $scope.routesList = [];
 
@@ -119,6 +120,29 @@
 
         if( route.title ) {
           $scope.routesList.push(route);
+        }
+
+      })
+
+    })
+
+    .controller('DetailsCtrl', function($scope) {
+
+      $scope.myInput = {
+        name: 'Filippo',
+        surname: 'Conti'
+      }
+
+      $scope.$on('$locationChangeStart', function(e) {
+
+        if( !$scope.myForm.$pristine ) {
+
+          if( !confirm("If you exit your changes will be lost, are you sure?") ) {
+            console.log('route change prevented');
+            e.preventDefault();
+            return;
+          }
+
         }
 
       })
