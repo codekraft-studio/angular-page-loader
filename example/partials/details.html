@@ -1,17 +1,27 @@
 <div style="text-align: center">
 
-  <h2>Change this fake details</h2>
+    <div class="content-box">
 
-  <form class="details-box" name="myForm">
-    <input type="text" ng-model="myInput.name">
-    <input type="text" ng-model="myInput.surname">
-    <input type="submit" value="Save">
-  </form>
+        <h2>Change the input below and try to change the page.</h2>
 
-  <p style="text-align: center">
-    Change the details above and try to change route, a confirm box will appear asking if you really want to exit before the saves are changed.
-    <br>If you press <b>No</b> the route change will be prevented and the page loader will not appear.
-    <br>If you press <b>Yes</b> the route will change and the loader will appear until is fully loaded.
-  </p>
+        <form class="details-box" name="myForm">
+            <input type="text" ng-model="myInput.name" required>
+            <input type="text" ng-model="myInput.surname" required>
+            <input type="submit" value="Save">
+        </form>
+
+        <p>
+            If you press <b>No</b> the route change will be prevented and the page loader will not appear.
+            <br>If you press <b>Yes</b> the route will change and the loader will appear until the next route is fully loaded.
+        </p>
+
+        <pre class="form-control">{{myForm}}</pre>
+
+        <p>
+            By clicking the <b>Save</b> button the form will be submitted and you can exit the page without any alert.
+        </p>
+
+    </div>
+
 
 </div>
