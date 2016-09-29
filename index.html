@@ -33,7 +33,7 @@
                 <h1>angular-page-loader</h1>
                 <h2>quick integration for your favourite loaders</h2>
             </div>
-            <a href="https://github.com/codekraft-studio"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+            <a href="https://github.com/codekraft-studio/angular-page-loader"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
         </header>
 
         <section>
@@ -41,15 +41,43 @@
             <h2>Very simple to use and very effective!</h2>
 
             <p>
-                This page is the basic usage, a normal AngularJs application without routes.
-                <br>With this module you can use your favourite loader in a second with a complete integration for your app.
-                <br>In this <a href="./example/#/">other page</a> instead you can see the example which uses the <b>angular routing system</b>.
+                A simple module that can integrate your favorite loader in any AngularJs app.
+                <br>You can use your favourite loaders in a second with <i>many customizations</i>!
             </p>
 
             <p>
-                The directive will show the loader during the routes view load only if the route takes more than <b>250ms</b> to load.
-                <br>This time is customizable with the <b>latency</b> attribute.
+                The <b>page-loader</b> directive will show any loader during the route change
+                <br>only if the route takes more than the default time (which is <b>250ms</b>) to load.
+                <br>This default ime is customizable with the <b>latency</b> attribute.
             </p>
+
+            <div class="guide">
+
+                <h3>
+                    <a href="./example/default">
+                        It works with <strong>ngRoute</strong>
+                    </a>
+                </h3>
+
+                <p>
+                    The module will work out of the box with the Angular Route module (ngRoute).
+                </p>
+
+            </div>
+
+            <div class="guide">
+
+                <h3>
+                    <a href="./example/ui-router">
+                        It works with <strong>ui.router</strong>
+                    </a>
+                </h3>
+
+                <p>
+                    And it will work out of the box, also for the ui.router module.
+                </p>
+
+            </div>
 
         </section>
 

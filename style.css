@@ -8,7 +8,11 @@ html, body {
     font-family: 'r', sans-serif;
     color: #555;
 }
-article { text-align: center; }
+
+article {
+    text-align: center;
+}
+
 article header {
     color: #23282E;
     padding: 20px 0 0 0;
@@ -16,11 +20,13 @@ article header {
     border-bottom: 3px solid #337ab7;
     background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 }
+
 article header div {
     width: 80%;
     margin: 0 auto 20px auto;
     position: relative;
 }
+
 article header h1, article header h2 {
     margin: 0;
     padding: 0;
@@ -28,25 +34,32 @@ article header h1, article header h2 {
     color: whitesmoke;
     outline: black;
 }
+
 article section {
     padding: 0px 10%;
 }
+
 h1 {
     font-weight: 700;
     font-size: 3em;
 }
+
 h2 {
     font-weight: 600;
     font-size: 2em;
     font-family: 'rs';
 }
 
+h3 {
+    color: #21c6dd;
+}
+
 section h1, h2 {
-    color: #00b3b6;
+    color: #02a4c0;
 }
 
 p {
-  line-height: 30px;
+    line-height: 30px;
 }
 
 div.content-box {
@@ -54,52 +67,77 @@ div.content-box {
 }
 
 pre.form-control {
-  margin: 10px 0;
+    margin: 10px 0;
 }
 
 .img-box {
-  width: 100%;
-  height: 400px;
+    width: 100%;
+    height: 400px;
 }
 
 .img-box img {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 nav.routes-container {
-  width: 100%;
+    width: 100%;
 }
 
 ul.routes-list {
-  padding: 0;
-  margin: 20px 0 0 0;
-  list-style: none;
+    padding: 0;
+    margin: 0 auto 20px auto;
+    list-style: none;
+    display: flex;
+    width: 60%;
 }
 
 li.route {
-  display: inline-block;
-  width: 30%;
-  border: thin solid #29b8e5;
-  background-color: rgba(182,255,252,0.48);
-  padding: 0.5%;
-  margin: 1%;
-  height: 30px;
+    display: inline-block;
+    width: 100%;
+    border: thin solid #ffffff;
+    background-color: transparent;
+    padding: 0.5%;
+    margin: 1%;
+    height: 30px;
+    color: white;
 }
 
 li a {
-  text-decoration: none;
-  vertical-align: middle;
-  line-height: 30px;
-  display: block;
-  text-transform: uppercase;
-  color: #00597b;
+    text-decoration: none;
+    vertical-align: middle;
+    line-height: 30px;
+    display: block;
+    text-transform: uppercase;
+    color: inherit;
 }
 
 li.route:hover {
- background-color: rgba(182,255,252,1);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #494949;
+}
+
+li.route.ng-scope {
 }
 
 form.details-box input {
     padding: 10px;
+}
+
+.guide {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.guide h3 {
+    margin: 0;
+}
+
+.guide p {
+    margin: 0;
+}
+
+.guide a {
+    text-decoration: none;
+    color: inherit;
 }

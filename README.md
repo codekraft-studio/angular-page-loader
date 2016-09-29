@@ -24,14 +24,14 @@ angular.module('app', ['angular-page-loader'])
 And optionally add the module directive to your page DOM, inside the body:
 ```html
 <body ng-cloak>
-  <page-loader></page-loader>
+    <page-loader></page-loader>
 </body>
 ```
 
 Anyway is a best practice to add in your page **head**, as descripted in the Angular documentation, the following style:
 ```css
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
+    display: none !important;
 }
 ```
 To hide all the Angular elements that have **ng-cloack** attribute until the app is loaded, in our case in better to add ng-cloak to the whole body element.
@@ -40,16 +40,19 @@ To hide all the Angular elements that have **ng-cloack** attribute until the app
 
 ### Basic usage
 
-###### with ngRoute:
-If you **are using** Angular Routes (ngRoute), add the **page-loader** directive and you are ready to go, simply reload your application and you will see the loader on pages that takes more than **250ms** to load.
+##### with ngRoute:
+If you **are using** Angular Routes (ngRoute), add the **page-loader** directive and you are ready to go, reload your application and you will see the loader on pages that takes more than **250ms** to load.
 
+##### with ui.router:
+If you **are using** ui.router, simply add the **page-loader** directive and you are ready to go.
 
-###### without ngRoute:
-If you **are NOT using** Angular Routes (ngRoute) you must add a **flag** attribute to the element in order to be able to determine when you want to hide the loader, like seen in this example:
+##### without ngRoute or ui.router:
+If you **are NOT using** Angular Routes (ngRoute) or ui.router you must add a **flag** attribute to the element in order to be able to determine when you want to hide the loader, otherwise it will not show.
+Follow this example:
 
 ```html
 <body ng-cloak>
-  <page-loader flag="isLoading"></page-loader>
+    <page-loader flag="isLoading"></page-loader>
 </body>
 ```
 
@@ -58,9 +61,9 @@ And in your application:
 angular.module('app')
 .run(function($timeout, $rootScope) {
 
-  $timeout(function() { // simulate long page loading
-    $rootScope.isLoading = false; // turn "off" the flag
-  }, 3000)
+    $timeout(function() { // simulate long page loading
+        $rootScope.isLoading = false; // turn "off" the flag
+    }, 3000)
 
 })
 ```
@@ -77,8 +80,8 @@ You can use any loader you prefer in the module simply by adding it inside the d
 
 ```html
 <page-loader>
-  <div class="pacman"></div>
-  <div class="dot"></div>
+    <div class="pacman"></div>
+    <div class="dot"></div>
 </page-loader>
 ```
 
