@@ -1,37 +1,38 @@
 {
-  "name": "angular-page-loader",
-  "version": "1.0.1",
-  "description": "quick app integration for your favourite loaders",
-  "main": "index.js",
-  "directories": {
-    "example": "example"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/codekraft-studio/angular-loader.git"
-  },
-  "keywords": [
-    "angularjs",
-    "javascript",
-    "loader",
-    "page-loader",
-    "preloader",
-    "load",
-    "animation"
-  ],
-  "author": "codekraft-studio",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/codekraft-studio/angular-loader/issues"
-  },
-  "homepage": "https://github.com/codekraft-studio/angular-loader#readme",
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-concat": "^1.0.0",
-    "grunt-contrib-uglify": "^1.0.1",
-    "grunt-contrib-watch": "^1.0.0"
-  }
+    "name": "angular-page-loader",
+    "version": "1.0.1",
+    "description": "quick app integration for your favourite loaders",
+    "main": "./dist/angular-page-loader.js",
+    "style": "./dist/angular-page-loader.css",
+    "directories": {
+        "example": "example"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/codekraft-studio/angular-loader.git"
+    },
+    "keywords": [
+        "angularjs",
+        "javascript",
+        "loader",
+        "page-loader",
+        "preloader",
+        "load",
+        "animation"
+    ],
+    "author": "codekraft-studio",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/codekraft-studio/angular-loader/issues"
+    },
+    "homepage": "https://github.com/codekraft-studio/angular-loader#readme",
+    "devDependencies": {
+        "grunt": "^0.4.5",
+        "grunt-contrib-concat": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-contrib-watch": "^1.0.0"
+    }
 }
