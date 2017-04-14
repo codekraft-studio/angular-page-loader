@@ -1,1 +1,3 @@
-angular.module('angular-page-loader', [])
+'use strict';
+
+angular.module('angular-page-loader', []);
