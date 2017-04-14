@@ -61,9 +61,16 @@ And in your application:
 angular.module('app')
 .run(function($timeout, $rootScope) {
 
-    $timeout(function() { // simulate long page loading
-        $rootScope.isLoading = false; // turn "off" the flag
-    }, 3000)
+  // Use a root scope flag to access everywhere in your app
+  $rootScope.isLoading = true;
+
+  // simulate long page loading
+  $timeout(function() {
+
+    // turn "off" the flag
+    $rootScope.isLoading = false;
+
+  }, 3000)
 
 })
 ```
