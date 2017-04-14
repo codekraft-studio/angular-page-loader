@@ -24,8 +24,6 @@
 </head>
 <body ng-cloak>
 
-    <page-loader flag="isLoading"></page-loader>
-
     <article role="main">
 
         <header>
@@ -50,6 +48,24 @@
                 <br>only if the route takes more than the default time (which is <b>250ms</b>) to load.
                 <br>This default ime is customizable with the <b>latency</b> attribute.
             </p>
+
+            <div class="guide">
+
+              <div class="loader-example">
+
+                <page-loader bg-color="transparent" flag="isLoading"></page-loader>
+
+              </div>
+
+                <h3>
+                    <a href="./example/default">
+                        It works alone with a <b>flag</b>.
+                    </a>
+                </h3>
+
+                <p>You just have to turn <a href="#" ng-click="isLoading = true">ON</a> (true) and <a href="#" ng-click="isLoading = false">OFF</a> (false) the flag variable.</p>
+
+            </div>
 
             <div class="guide">
 
@@ -96,11 +112,10 @@
 
     .run(function($timeout, $rootScope) {
 
-        $timeout(function() {
-            $rootScope.isLoading = false;
-        }, 3000);
+      // Use a root scope flag to access everywhere in your app
+      $rootScope.isLoading = true;
 
-    })
+    });
 
 </script>
 </html>
