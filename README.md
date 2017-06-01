@@ -4,10 +4,11 @@ quick app integration for your favourite loaders
 ### [DEMO](http://www.codekraft.it/demos/angular-page-loader/)
 
 ### Getting started
-Download it via github or via npm:
+Download it via github, npm or via bower:
 
 ```bash
 npm install angular-page-loader
+bower install --save angular-page-loader
 ```
 
 Or use it directly from the GitHub CDN:
