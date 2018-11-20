@@ -1,6 +1,6 @@
 {
   "name": "angular-page-loader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "quick app integration for your favourite loaders",
   "main": "./dist/angular-page-loader.js",
   "style": "./dist/angular-page-loader.css",
