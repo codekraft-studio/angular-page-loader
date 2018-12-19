@@ -1,6 +1,6 @@
 angular.module('angular-page-loader')
 
-.directive('pageLoader', ['$timeout', '$templateCache', '$location', function pageLoader($timeout, $templateCache, $location) {
+.directive('pageLoader', function pageLoader($timeout, $templateCache, $location) {
 
   var directive = {
     restrict: 'EA',
